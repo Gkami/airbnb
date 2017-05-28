@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  listing_id: 1
+  when: MyString
+  where: MyString
+  no_guest: 1
+  check_in: 2017-05-26
+  check_out: 2017-05-26
+  payment_mode: MyString
+  payment_status: 
+
+two:
+  user_id: 1
+  listing_id: 1
+  when: MyString
+  where: MyString
+  no_guest: 1
+  check_in: 2017-05-26
+  check_out: 2017-05-26
+  payment_mode: MyString
+  payment_status: 
