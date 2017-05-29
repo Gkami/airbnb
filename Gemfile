@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #Clearance is a Rails engine tested against Rails >= 3.2 and Ruby >= 1.9.3.
 gem 'clearance'
 
+#for protecting email and password
+gem "figaro"
+

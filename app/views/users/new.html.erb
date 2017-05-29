@@ -1,0 +1,19 @@
+<div id="clearance" class="sign-up">
+  <h2><%= t(".title") %></h2>
+
+  <%= form_for @user, remote: true do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+  <div class="other-links">
+    <%= link_to t(".sign_in"), sign_in_path, id: "new_link", remote: true %>
+  </div>
+
+
+</div>
+
+<div class="login"></div>
