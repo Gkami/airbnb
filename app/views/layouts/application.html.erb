@@ -18,8 +18,8 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <div>
- <% if current_user != nil %>
-    <h3>Welcome, <%=current_user.access_level%></h3>
+        <% if current_user != nil %>
+        <h3 style="color: white">Welcome, <%=current_user.access_level%></h3>
     <div>
     <%= image_tag current_user.avatar.url, class:"avatar-image thick-green-border"%>
     </div>
