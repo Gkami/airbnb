@@ -1,7 +1,7 @@
 class CreateListings < ActiveRecord::Migration[5.0]
   def change
     create_table :listings do |t|
-      t.references :user, index: true, foreign_key: true
+      t.references :user, foreign_key: true
       t.string :address1
       t.string :address2
       t.integer :postal_code
@@ -11,6 +11,8 @@ class CreateListings < ActiveRecord::Migration[5.0]
       t.string :room_type
       t.string :description
       t.date :availability
+      t.integer :bedroom
+      t.integer :bathroom
 
       t.timestamps
     end

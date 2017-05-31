@@ -31,7 +31,7 @@ class Clearance::SessionsController < Clearance::BaseController
         # render template: "sessions/new", status: :unauthorized
       end
     end
-  end
+   end
 
   def destroy
     sign_out

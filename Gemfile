@@ -59,3 +59,19 @@ gem 'clearance'
 #for protecting email and password
 gem "figaro"
 
+#facebook connect
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+#random database
+gem 'faker'
+
+#pagenation
+gem 'kaminari'
+
+#upload photo
+gem 'carrierwave'
+#to resize the photo
+gem 'mini_magick' 
+
+
