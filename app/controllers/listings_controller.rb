@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :check_owner, only: [:edit, :update, :destroy] 
 
   # GET /listings
   # GET /listings.json
@@ -11,12 +12,13 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @booking = @listing.bookings.new
   end
 
   # GET /listings/new
   def new
     @listing = Listing.new
-    allowed?(action: "new", user: current_user)
+    # allowed?(action: "new", user: current_user)
   end
 
   # GET /listings/1/edit
@@ -68,6 +70,12 @@ class ListingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])
+    end
+
+    def check_owner
+      unless @listing.user_id == current_user.id
+        redirect_to listings_path, notice: "You are not allowed to access that page."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

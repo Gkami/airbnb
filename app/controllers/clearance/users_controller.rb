@@ -9,6 +9,10 @@ class Clearance::UsersController < Clearance::BaseController
     skip_before_filter :authorize, only: [:create, :new], raise: false
   end
 
+  def show
+      @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
     render template: "users/new"
@@ -19,16 +23,18 @@ class Clearance::UsersController < Clearance::BaseController
 
     if @user.save
       sign_in @user
-      redirect_back_or url_after_create
+      # redirect_back_or url_after_create
+      redirect_to listing_path
     else
-      # flash[:notice] = "Make sure you include your name and a valid email address"
-      respond_to do |format|
-
-        format.js
-      # render template: "users/new"
-      end
+       flash[:notice] = "Make sure you include your name and a valid email address"
+      # respond_to do |format|
+      # format.html {redirect_to @user}
+        # format.js
+       render template: "users/new"
+      # end
     end
   end
+
 
   private
 

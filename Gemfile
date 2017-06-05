@@ -74,4 +74,7 @@ gem 'carrierwave'
 #to resize the photo
 gem 'mini_magick' 
 
+#Amazon S3
+gem "fog-aws"
+
 

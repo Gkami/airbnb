@@ -7,13 +7,13 @@ class User < ApplicationRecord
   
 	# has_secure_password
 	has_many :listings, dependent: :destroy
-	has_many :reservations, dependent: :destroy
+	has_many :bookings, dependent: :destroy
 	
 
 	validates :username, presence: true #{message: "Please fill-in all fields" }
 	# validates :email, uniqueness: { message: "must be new"}
 	# validates :email, format: { with: /\w*@.*\.\w*/, message: "Invalid email address" } 
-	validates :password, length: { minimum: 6, message: "Password must be at least 6 characters" }
+	validates :password, length: { minimum: 6, message: "Password must be at least 6 characters" }, on: :create
 
 #In app/models/user.rb    
 has_many :authentications, :dependent => :destroy

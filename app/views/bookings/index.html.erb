@@ -1,0 +1,42 @@
+<h1>Bookings</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table hover">
+  
+    <thead>
+      <tr>
+        <!-- <th>User</th> -->
+        <th>Num of Guest</th>
+        <th>Check in date</th>
+        <th>Check out date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.num_guests %></td>
+          <td><%= booking.start_date.strftime('%d %B %Y') %></td>
+          <td><%= booking.end_date.strftime('%d %B %Y') %></td>
+          
+                   
+          <% if current_user.id == booking.user_id %>
+            <td><%= link_to 'Show', booking %></td>
+            <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+            <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ </div> 
+ </div>
+ </div>
+ </div>
+
+
+<%= paginate @bookings %>
