@@ -1,0 +1,28 @@
+
+<%= form_for (@booking) do |f| %>
+<%= f.hidden_field :listing_id, value: @listing.id %>
+
+  <div class="field">
+    <%= f.label :num_guests %>
+    <%#= f.num_guests :num_guests %>
+    <%#= f.select :num_guests, ["1","2","3","4","5"], :prompt => "Select one"%>
+    <%= f.select :num_guests, (((1..@listing.max_num_guests).to_a).map!{|i| i.to_s }), :prompt => "Select one"%>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit "Submit Booking" %>
+  </div>
+<% end %>

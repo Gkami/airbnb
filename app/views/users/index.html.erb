@@ -1,0 +1,48 @@
+<p class='text-center'>testing</p>
+
+
+<h1>Listings</h1>
+
+<!-- Media, Title, and Description area -->
+      <div class="row" style="height:600px;">
+          <% @listings.each_with_index do |listing, i| %>
+          <div class="card col-md-3 col-sm-10" style="padding-top: 8px;" >
+            <div class="pmd-card pmd-card-default pmd-z-depth" style="height:400px;">
+                
+                  <!-- <div id= "card_margin" > -->
+
+  <!-- Card media -->
+                  <div class="pmd-card-media" style="height:40%">
+                      <% if listing.photos.length > 0 %>
+                        <%= image_tag(listing.photos.first.carousel,:id=>"card_listing_preview")%>
+                      <% else %>
+                        <!-- <img id="card_listing_preview" src="/assets/no-preview.jpg"> -->
+                        <img width="1184" height="666" class="img-responsive" src="http://propeller.in/assets/images/profile-pic.png">
+                      <% end %> 
+    
+        <!-- <img width="1184" height="666" class="img-responsive" src="http://propeller.in/assets/images/profile-pic.png"> -->
+                  </div>
+    
+    <!-- Card header -->
+      <div class="pmd-card-title">
+          <h2 class="pmd-card-title-text">
+              <p>RM <%= listing.price %></p>
+              <%= listing.state %>
+              <!-- <small>Image from unsplash.com</small> -->
+          </h2>
+        <!-- <h2 class="pmd-card-title-text">Title goes here</h2>
+        <span class="pmd-card-subtitle-text">Secondary text</span>   -->
+      </div>
+    
+    <!-- Card action -->
+      <div class="pmd-card-actions">
+          <%= link_to listing do %><button class="btn pmd-btn-flat pmd-ripple-effect btn-primary" type="button">Primary</button><% end %>
+          <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-default">Action</button>
+      </div>
+    </div>
+    <% end %>
+
+
+
+
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_tv: false
+  is_kitchen: false
+  is_air: false
+  is_internet: false
+  is_smoker: false
+  is_non_smoker: false
+
+two:
+  is_tv: false
+  is_kitchen: false
+  is_air: false
+  is_internet: false
+  is_smoker: false
+  is_non_smoker: false

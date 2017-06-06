@@ -1,0 +1,7 @@
+<%= form_for @user, html: {multipart: true} do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+<%end%>
