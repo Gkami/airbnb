@@ -80,4 +80,7 @@ gem "fog-aws"
 #payment
 gem 'braintree'
 
+#mailer
+gem "letter_opener", :group => :development
+
 
