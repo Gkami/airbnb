@@ -5,7 +5,9 @@ class UsersController < Clearance::UsersController
 
 	def index
 		@users=User.all
+    @listings=Listing.order(:id).page params[:page]
 		# @users = User.order(:name).page params[:page]
+    
 	end
 
   def show

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'braintree/new'
+
   root 'users#index'
 
   # start of clearance routes
@@ -35,4 +37,7 @@ Rails.application.routes.draw do
   
 
   get '/:id', to: 'listings#show'
+
+
+  post 'braintree/checkout'
 end

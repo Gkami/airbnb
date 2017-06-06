@@ -1,54 +1,69 @@
-<p id="notice"><%= notice %></p>
+
+
+
+ <p id="notice"><%= notice %></p>
 
 <h1>Listings</h1>
 
-<!-- Media, Title, and Description area -->
-      <div class="row" style="height:600px;">
-          <% @listings.each_with_index do |listing, i| %>
-          <div class="card col-md-3 col-sm-10" style="padding-top: 8px;" >
-            <div class="pmd-card pmd-card-default pmd-z-depth" style="height:400px;">
-                
-                  <!-- <div id= "card_margin" > -->
-
-  <!-- Card media -->
-                  <div class="pmd-card-media" style="height:40%">
-                      <% if listing.photos.length > 0 %>
-                        <%= image_tag(listing.photos.first.carousel,:id=>"card_listing_preview")%>
-                      <% else %>
-                        <!-- <img id="card_listing_preview" src="/assets/no-preview.jpg"> -->
-                        <img width="1184" height="666" class="img-responsive" src="http://propeller.in/assets/images/profile-pic.png">
-                      <% end %> 
-    
-        <!-- <img width="1184" height="666" class="img-responsive" src="http://propeller.in/assets/images/profile-pic.png"> -->
-                  </div>
-    
-    <!-- Card header -->
-      <div class="pmd-card-title">
-          <h2 class="pmd-card-title-text">
-              <p>RM <%= listing.price %></p>
-              <%= listing.state %>
-              <!-- <small>Image from unsplash.com</small> -->
-          </h2>
-        <!-- <h2 class="pmd-card-title-text">Title goes here</h2>
-        <span class="pmd-card-subtitle-text">Secondary text</span>   -->
-      </div>
-    
-    <!-- Card action -->
-      <div class="pmd-card-actions">
-          <%= link_to listing do %><button class="btn pmd-btn-flat pmd-ripple-effect btn-primary" type="button">Primary</button><% end %>
-          <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-default">Action</button>
-      </div>
-    </div>
-    <%# if (i + 1) % 4 == 0  %>
-   <!--  </div> -->
-   <!--  <div class="cards row">  -->
- <%# end %> 
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table hover">
   
-  <!-- </div> -->
-  </div>
-<% end %>
+    <thead>
+      <tr>
+        <th>User</th> 
+        <th>Address1</th>
+        <th>Address2</th>
+        <th>Postal code</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Price</th>
+        <th>Room type</th>
+        <th>Description</th>
+        <th>Availability</th>
+        <th>Bedroom</th>
+        <th>Bathroom</th>
+        <th>Preview Pic</th>
+      </tr>
+    </thead> 
 
+
+     <tbody> 
+      <% @listings.each do |listing| %>
+         <tr> 
+          <td><%= listing.user.username %></td> 
+          <td><%= listing.address1 %></td>
+          <td><%= listing.address2 %></td>
+          <td><%= listing.postal_code %></td>
+          <td><%= listing.state %></td>
+          <td><%= listing.country %></td>
+          <td><%= listing.price %></td>
+          <td><%= listing.room_type %></td>
+          <td><%= listing.description %></td>
+          <td><%= listing.availability %></td>
+          <td><%= listing.bedroom %></td>
+          <td><%= listing.bathroom %></td>
+           <td><% if listing.photos.length > 0 %>
+              <%= image_tag listing.photos.first, id:"listing_preview"%>
+              <% else %>
+              <img id="listing_preview" src="/assets/no-preview.jpg">
+              <% end %>
+          </td>  
+                   
+          <% if current_user.id == listing.user_id %>
+            <td><%= link_to 'Show', listing %></td>
+            <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+            <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ </div> 
+ </div>
+ </div>
  </div> 
 
   

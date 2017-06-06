@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'rest-client'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
@@ -66,7 +66,7 @@ gem 'omniauth-facebook'
 #random database
 gem 'faker'
 
-#pagenation
+#pagination
 gem 'kaminari'
 
 #upload photo
@@ -76,5 +76,8 @@ gem 'mini_magick'
 
 #Amazon S3
 gem "fog-aws"
+
+#payment
+gem 'braintree'
 
 

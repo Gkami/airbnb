@@ -16,3 +16,9 @@ FACEBOOK_APP_SECRET: '669146b43e1c3ee63173fae5afc8011f'
 AWSAccessKeyId: 'AKIAIXH4ZAAMPWNSMJVQ'
 AWSSecretKey: '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'
 AWSDirectory: 'sivaairbnbclone'
+
+#for payment
+BRAINTREE_MERCHANT_ID: 'brmsynd6tssz6sqm'
+BRAINTREE_PUBLIC_KEY: '9qjcnwpwv55wtrsx'
+BRAINTREE_PRIVATE_KEY: 'f79a2ffd5971f266f7bbe4940cdf4f06'
+

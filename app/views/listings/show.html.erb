@@ -1,38 +1,30 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-<div class="col-md-8">
-<% if @listing.photos.length > 0 %>  
-<div class="container" style="height:300px; width:600px">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="col-md-8">
+      <% if @listing.photos.length > 0 %>  
+        <div class="container" style="height:300px; width:600px">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+          <ol class="carousel-indicators">
 
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <% t = @listing.photos.length-1 %>
-      <% for y in 1..t do%>
-      <li data-target="#myCarousel" data-slide-to="<%= y %>"></li>
-      <% end %>
-    </ol>
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <% t = @listing.photos.length-1 %>
+              <% for y in 1..t do%>
+           <li data-target="#myCarousel" data-slide-to="<%= y %>"></li>
+              <% end %>
+          </ol>
 <!-- Wrapper for slides -->
   
-  <div class="carousel-inner" style="height:300px">
-     
-       <div class="item active">
-       <%= image_tag @listing.photos.first.carousel.url %>
-         
-       </div>
-
-       <% for i in 1..t do%>
-     <div class="item">
-
-      <%= image_tag @listing.photos[i].carousel.url%>
-        
-      
-      </div>
-
-  <% end %>  
-      
-    </div> 
+      <div class="carousel-inner" style="height:300px">   
+        <div class="item active">
+          <%= image_tag @listing.photos.first.carousel.url %>  
+        </div>
+          <% for i in 1..t do%>
+        <div class="item">
+          <%= image_tag @listing.photos[i].carousel.url%>
+        </div>
+        <% end %>  
+      </div> 
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -50,7 +42,7 @@
 <div class="col-md-4">
 <p>
   <strong>User:</strong>
-  <%= @listing.user %>
+  <%= @listing.user[:username] %>
 </p>
 
 <p>
