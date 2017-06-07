@@ -83,4 +83,7 @@ gem 'braintree'
 #mailer
 gem "letter_opener", :group => :development
 
+#Mailing - background job
+gem 'sidekiq'
+
 

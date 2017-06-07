@@ -8,7 +8,7 @@ default from: 'sivanext248@gmail.com'
 		@customer = customer
 		@host = host
 		@booking_id = booking_id
-		# @url = '<%= link_to "View Booking", booking_path(@booking_id) %>'
+		@url = '<%= link_to "View Booking", booking_path(@booking_id) %>'
 		mail(to: @customer.email, subject: "You have a booking")
 
 	end

@@ -1,7 +1,52 @@
 <p class='text-center'>testing</p>
 
+<H1>HOME</H1>
 
-<div class="row">
+<div class="cards row">
+  <% @listings.each_with_index do |listing, i| %>
+  <!-- Card media -->
+      <div class="card col-md-3" style="height: 300px; padding-top: 8px;" >
+      <div class="pmd-card pmd-card-default pmd-z-depth">
+        <div id= "card_margin" >
+          <div class="pmd-card-media">
+            <% if listing.photos.length > 0 %>
+              <%= image_tag listing.photos.first.carousel, id:"card_listing_preview"%>
+            <% else %>
+              <img id="card_listing_preview" src="http://propeller.in/assets/images/profile-pic.png">
+            <% end %> 
+        <!-- <img width="1184" height="666" class="img-responsive" src="http://propeller.in/assets/images/profile-pic.png"> -->
+          </div>
+    
+    <!-- Card header -->
+          <div class="pmd-card-title">
+        <h2 class="pmd-card-title-text"><%= listing.room_type %></h2>
+        <span class="pmd-card-subtitle-text"><%= listing.price %></span>  
+          </div>
+    
+    <!-- Card action -->
+      <div class="pmd-card-actions">
+        <button class="btn pmd-btn-flat pmd-ripple-effect btn-primary" type="button">Primary</button>
+        <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-default">Action</button>
+      </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div> <!-- end row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" style="margin-top: 20px;">
     <div class="col-xs-12">
       <div class="table-responsive">
         <table class="table table-bordered table hover">
