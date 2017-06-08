@@ -86,7 +86,3 @@ gem "launchy"
 
 #Mailing - background job
 gem 'sidekiq'
-
-#web server
- gem 'unicorn'
-
