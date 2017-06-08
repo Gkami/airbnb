@@ -80,4 +80,13 @@ gem "fog-aws"
 #payment
 gem 'braintree'
 
+#mailer
+gem "letter_opener", :group => :development
+gem "launchy"
+
+#Mailing - background job
+gem 'sidekiq'
+
+#web server
+ gem 'unicorn'
 

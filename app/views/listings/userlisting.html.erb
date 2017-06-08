@@ -1,12 +1,11 @@
+<p>testing</p>
+<br>
 
 
 
- <p id="notice"><%= notice %></p>
+	<% end %>
 
-<h1>Listings</h1>
-
-<div class="container">
-  <div class="row">
+	<div class="row" style="margin-top: 20px;">
     <div class="col-xs-12">
       <div class="table-responsive">
         <table class="table table-bordered table hover">
@@ -26,12 +25,13 @@
         <th>Bedroom</th>
         <th>Bathroom</th>
         <th>Preview Pic</th>
+        <th>Action</th>
       </tr>
     </thead> 
 
 
      <tbody> 
-      <% @listings.each do |listing| %>
+	      <% @listings.each do |listing| %>
          <tr> 
           <td><%= listing.user.username %></td> 
           <td><%= listing.address1 %></td>
@@ -64,22 +64,3 @@
  </div> 
  </div>
  </div>
- </div> 
-
-  
-    
- 
-
-<%= paginate @listings %>
-
-<br>
-
-<%= link_to 'New Listing', new_listing_path %>
-
-
-
- 
-
-
-
-

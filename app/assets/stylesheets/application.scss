@@ -1,35 +1,60 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* Bootstrap css */
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
+
+/* Propeller typography */
+@import "http://propeller.in/components/typography/css/typography.css";
+
+/* Propeller buttons */
+@import "http://propeller.in/components/button/css/button.css";
+
+/* Propeller icons */
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
+@import "http://propeller.in/components/icons/css/google-icons.css";
+
+/* Propeller card css */
+@import "http://propeller.in/components/card/css/card.css";
+
+/* Propeller navbar */
+@import "http://propeller.in/components/navbar/css/navbar.css";
+
+/* Propeller dropdowns */
+@import "http://propeller.in/components/dropdown/css/dropdown.css";
+
+/* Propeller list */
+@import "http://propeller.in/components/list/css/list.css";
+/* Propeller modal */
+@import "http://propeller.in/components/modal/css/modal.css";
+
+
+
+
+
 
 .thick-green-border {
     border-color: orange;
-    border-width: 10px;
+    border-width: 3px;
     border-style: solid;
     border-radius: 50%;
   }
+
+img.smaller-image.thick-green-border {
+    height: 70px;
+  }
+
 
   .avatar-image {
     width: 100px;
   }
 
   #listing_preview{
-  max-height: 60px;
-  max-width: 60px;
+  max-height: 55px;
+  max-width: 55px;
   }
 
   #card_listing_preview {
@@ -39,12 +64,6 @@
     position: relative;
   }
 
-  /*#card_margin{
-    padding: 1;
-
-    margin: 0;
-  }*/
-
 .carousel-inner > .item > img {
 margin: auto auto;
 height:300px;
@@ -53,6 +72,21 @@ height:300px;
   img {
     max-width: 300px;
   }
+
+  div.card {
+  background: #ffffff;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  z-index: 1;
+}
+
+
+
 
 /*/ font stuff
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
@@ -272,6 +306,15 @@ a:hover{
   background-color: transparent;
 }
 
+.navbar-inverse {
+  background-color: lightblue;
+  border-color: lightblue;
+}
+
+#nav-avatar{
+  width: 40px; 
+  height: 40px;
+}
 /*body{
   background-image: url(/assets/beach2.jpg);
   width: 100%;
@@ -279,23 +322,5 @@ a:hover{
   background-size: cover;
 }
 */
-
-/* Bootstrap css */
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
-
-/* Propeller typography */
-@import "http://propeller.in/components/typography/css/typography.css";
-
-/* Propeller buttons */
-@import "http://propeller.in/components/button/css/button.css";
-
-/* Propeller icons */
-@import "http://fonts.googleapis.com/icon?family=Material+Icons";
-@import "http://propeller.in/components/icons/css/google-icons.css";
-
-/* Propeller card css */
-@import "http://propeller.in/components/card/css/card.css";
-
-
 
 

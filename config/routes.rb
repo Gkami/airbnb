@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'braintree/new'
 
-  root 'users#index'
+  root 'users#home'
 
   # start of clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -21,9 +21,14 @@ Rails.application.routes.draw do
 
 # end of clearance routes
 
-  resources :listings
-  resources :users, only: [:edit, :update]
+  resources :listings 
+  get "/mylistings" => "listings#userlisting", :as => :listing_user
+
+  resources :users, only: [:edit, :update, :index]
+  get '/users' => 'users#index', :as => :users_index
+
   resources :bookings, only: [:create, :destroy, :show, :edit, :update, :index]
+
 
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"

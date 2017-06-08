@@ -2,9 +2,16 @@ class UsersController < Clearance::UsersController
 	before_action :require_login
   before_action :find_user, only: [:show, :edit, :update]
 	
+  def home
+    @users=User.all
+    @listings=Listing.order(:id).page params[:page]
+    # @users = User.order(:name).page params[:page]
+    
+  end
+
 
 	def index
-		@users=User.all
+		@users=current_user
     @listings=Listing.order(:id).page params[:page]
 		# @users = User.order(:name).page params[:page]
     
