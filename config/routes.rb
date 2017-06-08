@@ -1,3 +1,5 @@
+
+
 Rails.application.routes.draw do
   get 'braintree/new'
 
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [:create, :destroy, :show, :edit, :update, :index]
 
 
+  resources :searches, only: [:create]
+  post '/search', to: 'listings#search', as: 'search' 
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 

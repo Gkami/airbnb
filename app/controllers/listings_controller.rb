@@ -2,11 +2,25 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :check_owner, only: [:edit, :update, :destroy] 
 
+
+
+
   # GET /listings
   # GET /listings.json
   def index
     # @listings = Listing.all
-    @listings=Listing.order(:id).page params[:page]
+    @listings=Listing.order(:id)
+    # @listings=@listings.city(params[:city]) if params[:city].present?
+  end
+
+  def search
+    if params[:search]
+      @listings = Listing.search(params[:search]).order("created_at DESC")
+    else
+      @listings = Listing.all.order("created_at DESC")
+    end
+
+    render 'users/home'
   end
 
   # GET /listings/1
@@ -85,5 +99,10 @@ class ListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:address1, :address2, :postal_code, :state, :country, :price, :room_type, :description, :availability, :bedroom, :bathroom, :max_num_guests, {photos:[]})
+    end
+
+    def filtering_params(params)
+      # params.slice(:city)
+      params(:city)
     end
 end
