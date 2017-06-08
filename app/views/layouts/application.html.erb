@@ -108,8 +108,12 @@
 <% if signed_in? -%>
   <%= link_to 'edit', edit_user_path(current_user) %>
 <% end %>
-
-    <%= yield %>
   
+
+  <div id="yield-content">
+    <%= yield %>
+  </div>
+
+
   </body>
 </html>

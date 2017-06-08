@@ -1,7 +1,4 @@
-/*
- *= require_tree .
- *= require_self
- */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /* Bootstrap css */
@@ -31,10 +28,9 @@
 /* Propeller modal */
 @import "http://propeller.in/components/modal/css/modal.css";
 
-
-
-
-
+#yield-content {
+  padding-top: 100px;
+}
 
 .thick-green-border {
     border-color: orange;
