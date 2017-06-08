@@ -23,6 +23,6 @@ BRAINTREE_PUBLIC_KEY: '9qjcnwpwv55wtrsx'
 BRAINTREE_PRIVATE_KEY: 'f79a2ffd5971f266f7bbe4940cdf4f06'
 
 
-# gmail_username: 'username@gmail.com'
-# gmail_password: 'Gmail password'
+GMAIL_USERNAME: 'sivanext248'
+GMAIL_PASSWORD: 'siva@7911'
 

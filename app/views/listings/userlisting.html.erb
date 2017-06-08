@@ -1,11 +1,11 @@
+<p>testing</p>
 <br>
-<br>
-<br>
-<br>
-<p class='text-center'>testing</p>
 
 
-<div class="row">
+
+	<% end %>
+
+	<div class="row" style="margin-top: 20px;">
     <div class="col-xs-12">
       <div class="table-responsive">
         <table class="table table-bordered table hover">
@@ -31,7 +31,7 @@
 
 
      <tbody> 
-      <% @listings.each do |listing| %>
+	      <% @listings.each do |listing| %>
          <tr> 
           <td><%= listing.user.username %></td> 
           <td><%= listing.address1 %></td>

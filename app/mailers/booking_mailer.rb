@@ -1,5 +1,5 @@
 class BookingMailer < ApplicationMailer
-default from: 'sivanext248@gmail.com'
+default from: 'customer@gmail.com'
 
 
 
@@ -8,8 +8,8 @@ default from: 'sivanext248@gmail.com'
 		@customer = customer
 		@host = host
 		@booking_id = booking_id
-		@url = '<%= link_to "View Booking", booking_path(@booking_id) %>'
-		mail(to: @customer.email, subject: "You have a booking")
+		@url = 'http://localhost:3000/bookings/"#{@booking_id}"'
+		mail(to: @host.email, subject: "You have a booking")
 
 	end
 

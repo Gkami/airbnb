@@ -1,5 +1,6 @@
 <p class='text-center'>testing</p>
-
+<br>
+<br>
 <H1>HOME</H1>
 
 <div class="cards row">
@@ -20,13 +21,38 @@
     <!-- Card header -->
           <div class="pmd-card-title">
         <h2 class="pmd-card-title-text"><%= listing.room_type %></h2>
-        <span class="pmd-card-subtitle-text"><%= listing.price %></span>  
+        <span class="pmd-card-subtitle-text" style="color:red ">MYR <%= listing.price %></span><br> 
+        <span class="pmd-card-subtitle-text"><%= listing.state %></span>   
           </div>
     
     <!-- Card action -->
       <div class="pmd-card-actions">
-        <button class="btn pmd-btn-flat pmd-ripple-effect btn-primary" type="button">Primary</button>
-        <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-default">Action</button>
+
+<!-- <button data-target="#media-dialog" data-toggle="modal" class="btn pmd-ripple-effect btn-primary pmd-z-depth" type="button">Media Modal</button>
+<div tabindex="-1" class="modal fade" id="media-dialog" style="display: none;" aria-hidden="true"> 
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="pmd-modal-media"> <img width="1184" height="666" class="img-responsive" src="http://propeller.in/assets/images/profile-pic.png"> </div>
+      <div class="pmd-card-title">
+        <h2 class="pmd-card-title-text">Title goes here</h2>
+        <span class="pmd-card-subtitle-text">Secondary text</span> </div>
+      <div class="pmd-modal-action">
+        <button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary pmd-btn-flat" type="button">Primary</button>
+        <button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default pmd-btn-flat" type="button">Action</button>
+      </div>
+      <div class="modal-body"> Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions. </div>
+    </div>
+  </div> 
+</div>
+ -->
+
+
+
+
+
+
+        <button class="btn pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><%= link_to listing do %>More Info...<% end %></button>
+        <!-- <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-default">Action</button> -->
       </div>
         </div>
       </div>
@@ -46,62 +72,3 @@
 
 
 
-<div class="row" style="margin-top: 20px;">
-    <div class="col-xs-12">
-      <div class="table-responsive">
-        <table class="table table-bordered table hover">
-  
-    <thead>
-      <tr>
-        <th>User</th> 
-        <th>Address1</th>
-        <th>Address2</th>
-        <th>Postal code</th>
-        <th>State</th>
-        <th>Country</th>
-        <th>Price</th>
-        <th>Room type</th>
-        <th>Description</th>
-        <th>Availability</th>
-        <th>Bedroom</th>
-        <th>Bathroom</th>
-        <th>Preview Pic</th>
-        <th>Action</th>
-      </tr>
-    </thead> 
-
-
-     <tbody> 
-      <% @listings.each do |listing| %>
-         <tr> 
-          <td><%= listing.user.username %></td> 
-          <td><%= listing.address1 %></td>
-          <td><%= listing.address2 %></td>
-          <td><%= listing.postal_code %></td>
-          <td><%= listing.state %></td>
-          <td><%= listing.country %></td>
-          <td><%= listing.price %></td>
-          <td><%= listing.room_type %></td>
-          <td><%= listing.description %></td>
-          <td><%= listing.availability %></td>
-          <td><%= listing.bedroom %></td>
-          <td><%= listing.bathroom %></td>
-           <td><% if listing.photos.length > 0 %>
-              <%= image_tag listing.photos.first, id:"listing_preview"%>
-              <% else %>
-              <img id="listing_preview" src="/assets/no-preview.jpg">
-              <% end %>
-          </td>  
-             <td><%= link_to 'Show', listing %></td>      
-          <% if current_user.id == listing.user_id %>
-            
-            <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-            <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
- </div> 
- </div>
- </div>

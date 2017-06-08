@@ -21,10 +21,14 @@ Rails.application.routes.draw do
 
 # end of clearance routes
 
-  resources :listings
+  resources :listings 
+  get "/mylistings" => "listings#userlisting", :as => :listing_user
+
   resources :users, only: [:edit, :update, :index]
-  get 'users/' => 'users#index', :as => :users_index
+  get '/users' => 'users#index', :as => :users_index
+
   resources :bookings, only: [:create, :destroy, :show, :edit, :update, :index]
+
 
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"

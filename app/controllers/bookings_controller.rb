@@ -13,9 +13,10 @@ def create
 
   
 	# @booking.update(total_price: (@booking.end_date - @booking.start_date).to_i * @listing.price)
-
+ 
 	if @booking.save
-     BookingMailer.booking_email(@booking.user ,@listing.user,@booking.id).deliver_now
+     #BookingMailer.booking_email(@booking.user ,@listing.user,@booking.id).deliver_now
+     BookingJobJob.perform_later(@booking.user ,@listing.user,@booking.id).
 		# redirect_to listing_path(@listing)
 		 redirect_to booking_path(@booking), notice: "Your reservation has been created..."
 	else
